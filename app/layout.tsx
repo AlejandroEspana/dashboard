@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex min-h-screen w-full bg-bg-dash text-text-primary ${inter.variable} ${outfit.variable} font-inter`}>
+      <body className={`flex min-h-screen w-full bg-bg-dash text-text-primary ${inter.variable} ${outfit.variable} font-inter overflow-x-hidden`}>
         {children}
       </body>
     </html>
