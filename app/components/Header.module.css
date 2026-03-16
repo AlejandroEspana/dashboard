@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 10px 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+  border: 1px solid var(--border-color);
+}
+
+.searchIcon {
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconButton {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+}
+
+.bellWrapper {
+  position: relative;
+  display: flex;
+}
+
+.bellIcon {
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.notificationDot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.balanceSection {
+  display: flex;
+  align-items: center;
+}
+
+.balanceLabels {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+  text-align: right;
+}
+
+.balanceTitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.balanceAmount {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+.divider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-color);
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hiText {
+  color: var(--text-primary);
+  font-weight: 400;
+}

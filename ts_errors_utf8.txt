@@ -1,0 +1,1 @@
+﻿app/components/DashboardGrid.tsx(9,29): error TS2307: Cannot find module './ConversionChart' or its corresponding type declarations.

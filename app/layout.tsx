@@ -2,8 +2,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Ecommerce Dashboard",
-  description: "Dashboard built with Next.js + TailwindCSS"
+  title: "Flex Dashboard",
+  description: "1:1 Dashboard Recreation",
 }
 
 export default function RootLayout({
@@ -13,10 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
-        {children}
+      <body>
+        <div className="app-container">
+          {children}
+        </div>
       </body>
     </html>
   )
 }
-

@@ -1,35 +1,54 @@
-import { FaSearch, FaRegUserCircle, FaChevronDown, FaDownload } from "react-icons/fa";
+'use client';
 
-export default function Header() {
+import React from 'react';
+import styles from './Header.module.css';
+import { FiSearch, FiBell } from 'react-icons/fi';
+
+const Header = () => {
   return (
-    <header className="flex justify-between items-center px-2">
-      <div className="flex items-center gap-3">
-        <h1 className="text-2xl font-bold mr-4">Dashboard</h1>
-        <div className="relative">
-          <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
-          <input
-            type="text"
-            placeholder="Search"
-            className="pl-10 pr-3 py-2 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 w-56"
+    <header className={styles.header}>
+      <div className={styles.leftSection}>
+        {/* Placeholder for page title if we were passing it, but design has Dashboard icon + text on the grid level, not in top header. Wait, in design, top header is just search, bell, balance, profile. */}
+        <div className={styles.searchContainer}>
+          <FiSearch className={styles.searchIcon} />
+          <input 
+            type="text" 
+            placeholder="Search" 
+            className={styles.searchInput}
           />
         </div>
       </div>
-      <div className="flex items-center gap-4">
-        <span className="text-sm text-gray-600">
-          Your Balance <b className="text-indigo-600">$5.456</b>
-        </span>
-        <div className="flex items-center border rounded-lg px-3 py-2 text-sm bg-white shadow-sm">
-          <span className="mr-2 text-gray-600">This Month</span>
-          <FaChevronDown className="text-gray-400" size={14} />
-        </div>
-        <button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold shadow transition-all">
-          <FaDownload size={16} /> Download Report
+
+      <div className={styles.rightSection}>
+        <button className={styles.iconButton}>
+          <div className={styles.bellWrapper}>
+            <FiBell className={styles.bellIcon} />
+            <span className={styles.notificationDot}>3</span>
+          </div>
         </button>
-        <div className="flex items-center gap-2">
-          <FaRegUserCircle className="text-indigo-600" size={32} />
-          <span className="font-semibold text-gray-700">Hi, Lay</span>
+
+        <div className={styles.balanceSection}>
+          <div className={styles.balanceLabels}>
+            <span className={styles.balanceTitle}>Your Balance</span>
+            <span className={styles.balanceAmount}>$5,456</span>
+          </div>
+        </div>
+
+        <div className={styles.divider}></div>
+
+        <div className={styles.profileSection}>
+          <img 
+            src="https://i.pravatar.cc/150?img=11" 
+            alt="User Profile" 
+            className={styles.avatar} 
+          />
+          <span className={styles.profileText}>
+            <span className={styles.hiText}>Hi,</span> Lay
+          </span>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

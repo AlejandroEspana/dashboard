@@ -1,66 +1,134 @@
-"use client"
+'use client';
+
+import React from 'react';
+import styles from './SessionsChart.module.css';
+import { FiUsers, FiCalendar, FiArrowUp, FiArrowDown } from 'react-icons/fi';
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement
-} from "chart.js"
-
-import { Line } from "react-chartjs-2"
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement
-)
+  LineElement,
+  Title,
+  Tooltip,
+  Filler
+);
 
-import { FaUsers } from "react-icons/fa";
+const SessionsChart = () => {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        border: { display: false },
+        ticks: { color: '#8d93a5', font: { family: 'Inter', size: 12 } }
+      },
+      y: {
+        grid: { color: '#f1f2f6' },
+        border: { display: false },
+        ticks: { color: '#8d93a5', font: { family: 'Inter', size: 12 }, stepSize: 5 }
+      }
+    },
+    elements: {
+      line: { tension: 0.4 } // curvy line
+    }
+  };
 
-export default function SessionsChart() {
   const data = {
-    labels: ["21", "22", "23", "24", "25"],
+    labels: [' ', '21', '22', '23', '24', '25', ' '],
     datasets: [
       {
-        data: [3, 8, 2, 9, 15],
-        borderColor: "#6366F1",
-        backgroundColor: "rgba(99,102,241,0.08)",
-        tension: 0.4,
-        pointRadius: 4,
-        pointBackgroundColor: "#6366F1",
+        fill: true,
+        data: [0, 6, 2, 8, 2, 15, 17],
+        borderColor: '#4f46e5',
+        backgroundColor: (context: any) => {
+          const ctx = context.chart.ctx;
+          const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+          gradient.addColorStop(0, 'rgba(79, 70, 229, 0.1)');
+          gradient.addColorStop(1, 'rgba(79, 70, 229, 0)');
+          return gradient;
+        },
+        borderWidth: 3,
+        pointRadius: 0,
+        pointHoverRadius: 0,
       },
     ],
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow flex flex-col h-full">
-      <div className="flex justify-between mb-4 items-center">
-        <div className="flex items-center gap-2">
-          <span className="bg-indigo-100 text-indigo-600 p-2 rounded-lg"><FaUsers size={20} /></span>
-          <div>
-            <h3 className="font-semibold text-gray-700">Online Store Sessions</h3>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="bg-gray-100 text-indigo-600 text-xs px-2 py-1 rounded-full font-bold">Visitors</span>
-              <span className="text-gray-700 font-bold text-sm">68</span>
-              <span className="text-green-500 text-xs font-semibold">↑ 15.6%</span>
-              <span className="text-red-500 text-xs font-semibold">↓ 1.6%</span>
-            </div>
+    <div className={styles.card}>
+      <div className={styles.headerRow}>
+        <h2 className={styles.cardTitle}>Online Store Sessions</h2>
+        <button className={styles.viewReportBtn}>View Report</button>
+      </div>
+
+      <div className={styles.statsRow}>
+        <div className={styles.statsIconWrapper}>
+          <FiUsers className={styles.statsIcon} />
+        </div>
+        <div className={styles.statsInfo}>
+          <div className={styles.statsLabel}>Visitors</div>
+          <div className={styles.statsValue}>68</div>
+        </div>
+        <div className={styles.statsChanges}>
+          <div className={styles.changePositive}>
+             <FiArrowUp className={styles.arrowIcon} /> 15.6%
+          </div>
+          <div className={styles.changeCompare}>
+             <span className={styles.compareValue}>26</span>
+             <span className={styles.changeNegative}>
+                <FiArrowDown className={styles.arrowIcon} /> 1.6%
+             </span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-gray-500 text-sm">February</span>
-          <button className="ml-2 px-3 py-1 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600 shadow-sm">View Report</button>
+      </div>
+
+      <div className={styles.divider}></div>
+
+      <div className={styles.chartControls}>
+        <h3 className={styles.chartSubtitle}>Sessions Over Time</h3>
+        <div className={styles.datePicker}>
+          <FiCalendar className={styles.actionIcon} />
+          <span>February</span>
+          <span className={styles.dropdownArrow}>&#9662;</span>
         </div>
       </div>
-      <div className="h-40">
-        <Line data={data} options={{
-          plugins: { legend: { display: false } },
-          scales: { x: { grid: { display: false } }, y: { grid: { color: '#F3F4F6' } } },
-          responsive: true,
-          maintainAspectRatio: false,
-        }} />
+
+      <div className={styles.chartWrapper}>
+        <Line options={options} data={data} />
       </div>
+
+      <div className={styles.xAxesCustomControls}>
+        {/* Simulating the rounded active state for day '21' */}
+        <button className={styles.navBtn}>&lt;</button>
+        <div className={styles.daysList}>
+           <div className={styles.dayActive}>21</div>
+           <div className={styles.day}>22</div>
+           <div className={styles.day}>23</div>
+           <div className={styles.day}>24</div>
+           <div className={styles.day}>25</div>
+        </div>
+        <button className={styles.navBtn}>&gt;</button>
+      </div>
+
     </div>
   );
-}
+};
+
+export default SessionsChart;

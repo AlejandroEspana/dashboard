@@ -1,0 +1,92 @@
+.kpiContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.kpiCard {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.blueIconBg {
+  background-color: #eef2ff;
+}
+
+.blueIcon {
+  color: var(--primary-color);
+}
+
+.purpleIconBg {
+  background-color: #f3f0ff;
+}
+
+.purpleIcon {
+  color: #7b61ff;
+}
+
+.kpiInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpiLabel {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.kpiValueWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kpiValue {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.changePositive {
+  display: flex;
+  align-items: center;
+  color: var(--success-color);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.changeNegative {
+  display: flex;
+  align-items: center;
+  color: var(--danger-color);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.arrowIcon {
+  margin-right: 4px;
+  font-size: 14px;
+  stroke-width: 3;
+}

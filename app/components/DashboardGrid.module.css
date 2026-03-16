@@ -1,0 +1,106 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.titleIconBox {
+  background-color: var(--text-primary); /* Dark blue/black */
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.datePicker {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  gap: 12px;
+}
+
+.dropdownArrow {
+  font-size: 10px;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  gap: 12px;
+  box-shadow: var(--shadow-success);
+  transition: transform 0.2s ease;
+}
+
+.downloadBtn:hover {
+  transform: translateY(-2px);
+}
+
+.actionIcon {
+  font-size: 16px;
+}
+
+.mainGridWrapper {
+  background-color: #f6f7fb; /* Light gray to match the image container holding cards */
+  border-radius: 40px; /* the big padded area in the design */
+  padding: 24px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.chartCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

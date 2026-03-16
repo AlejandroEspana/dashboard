@@ -1,17 +1,40 @@
-import { FaArrowUp } from "react-icons/fa";
+'use client';
 
-export default function PromoCard() {
+import React from 'react';
+import styles from './PromoCard.module.css';
+import { FiArrowUp, FiArrowRight } from 'react-icons/fi';
+
+const PromoCard = () => {
   return (
-    <div className="bg-indigo-600 text-white p-6 rounded-2xl flex flex-col justify-between shadow-lg h-full relative overflow-hidden">
-      {/* Fondo decorativo */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-30 pointer-events-none select-none" style={{background: "url('https://svgshare.com/i/13kA.svg') no-repeat right center/cover"}} />
-      <div className="relative z-10">
-        <h3 className="text-lg font-bold mb-1">Need More Stats?</h3>
-        <p className="text-sm opacity-90">Upgrade to pro for added benefits.</p>
+    <div className={styles.promoCard}>
+      <div className={styles.content}>
+        <h3 className={styles.title}>Need More Stats?</h3>
+        <p className={styles.subtitle}>Upgrade to pro for added benefits.</p>
+        <button className={styles.upgradeBtn}>
+          <FiArrowUp className={styles.btnIcon} /> Go Pro Now
+        </button>
       </div>
-      <button className="mt-6 bg-green-400 hover:bg-green-500 text-black px-6 py-2 rounded-lg w-max font-semibold shadow transition-all relative z-10">
-        Go Pro Now
-      </button>
+      
+      {/* Decorative illustration based closely on the provided image */}
+      <div className={styles.illustration}>
+        <div className={styles.cloud1}></div>
+        <div className={styles.cloud2}></div>
+        
+        {/* Curvy winding road/arrow pointing up */}
+        <div className={styles.roadPath}></div>
+        <div className={styles.arrowHeadMain}></div>
+        
+        <div className={styles.smallArrow1}></div>
+        <div className={styles.smallArrow2}></div>
+
+        <div className={styles.personContainer}>
+          {/* Abstract representation of the person holding the flag/arrow */}
+          <div className={styles.personBody}></div>
+          <div className={styles.personHead}></div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default PromoCard;
