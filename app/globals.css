@@ -5,12 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Eliminado @theme inline: Tailwind v4 no lo soporta */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -18,6 +13,8 @@
     --foreground: #ededed;
   }
 }
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
 body {
   background: var(--background);
