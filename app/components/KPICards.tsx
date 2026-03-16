@@ -1,56 +1,55 @@
 'use client';
 
 import React from 'react';
-import styles from './KPICards.module.css';
 import { FiShoppingCart, FiUsers, FiShoppingBag, FiArrowUp, FiArrowDown } from 'react-icons/fi';
 
 const KPICards = () => {
   return (
-    <div className={styles.kpiContainer}>
+    <div className="grid grid-cols-3 gap-6">
       
       {/* Total Sales Card */}
-      <div className={styles.kpiCard}>
-        <div className={`${styles.iconWrapper} ${styles.blueIconBg}`}>
-          <FiShoppingCart className={`${styles.icon} ${styles.blueIcon}`} />
+      <div className="bg-white rounded-3xl p-6 lg:px-8 flex items-center gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+        <div className="w-14 h-14 rounded-full flex items-center justify-center bg-primary-light text-primary text-2xl">
+          <FiShoppingCart />
         </div>
-        <div className={styles.kpiInfo}>
-          <div className={styles.kpiLabel}>Total Sales</div>
-          <div className={styles.kpiValueWrapper}>
-            <span className={styles.kpiValue}>263k</span>
-            <span className={styles.changePositive}>
-              <FiArrowUp className={styles.arrowIcon} /> 15.6%
+        <div className="flex flex-col">
+          <div className="text-sm text-text-secondary font-semibold mb-2">Total Sales</div>
+          <div className="flex items-center gap-3">
+            <span className="font-outfit text-3xl font-bold text-text-primary leading-none">263k</span>
+            <span className="flex items-center text-success text-[13px] font-semibold">
+              <FiArrowUp className="mr-1 text-sm stroke-[3]" /> 15.6%
             </span>
           </div>
         </div>
       </div>
 
       {/* Total Visitors Card */}
-      <div className={styles.kpiCard}>
-        <div className={`${styles.iconWrapper} ${styles.purpleIconBg}`}>
-          <FiUsers className={`${styles.icon} ${styles.purpleIcon}`} />
+      <div className="bg-white rounded-3xl p-6 lg:px-8 flex items-center gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+        <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#f3f0ff] text-[#7b61ff] text-2xl">
+          <FiUsers />
         </div>
-        <div className={styles.kpiInfo}>
-          <div className={styles.kpiLabel}>Total Visitors</div>
-          <div className={styles.kpiValueWrapper}>
-            <span className={styles.kpiValue}>35k</span>
-            <span className={styles.changeNegative}>
-              <FiArrowDown className={styles.arrowIcon} /> 6.2%
+        <div className="flex flex-col">
+          <div className="text-sm text-text-secondary font-semibold mb-2">Total Visitors</div>
+          <div className="flex items-center gap-3">
+            <span className="font-outfit text-3xl font-bold text-text-primary leading-none">35k</span>
+            <span className="flex items-center text-danger text-[13px] font-semibold">
+              <FiArrowDown className="mr-1 text-sm stroke-[3]" /> 6.2%
             </span>
           </div>
         </div>
       </div>
 
       {/* Total Orders Card */}
-      <div className={styles.kpiCard}>
-        <div className={`${styles.iconWrapper} ${styles.blueIconBg}`}>
-          <FiShoppingBag className={`${styles.icon} ${styles.blueIcon}`} />
+      <div className="bg-white rounded-3xl p-6 lg:px-8 flex items-center gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+        <div className="w-14 h-14 rounded-full flex items-center justify-center bg-primary-light text-primary text-2xl">
+          <FiShoppingBag />
         </div>
-        <div className={styles.kpiInfo}>
-          <div className={styles.kpiLabel}>Total Orders</div>
-          <div className={styles.kpiValueWrapper}>
-            <span className={styles.kpiValue}>165k</span>
-            <span className={styles.changePositive}>
-              <FiArrowUp className={styles.arrowIcon} /> 3.5%
+        <div className="flex flex-col">
+          <div className="text-sm text-text-secondary font-semibold mb-2">Total Orders</div>
+          <div className="flex items-center gap-3">
+            <span className="font-outfit text-3xl font-bold text-text-primary leading-none">165k</span>
+            <span className="flex items-center text-success text-[13px] font-semibold">
+              <FiArrowUp className="mr-1 text-sm stroke-[3]" /> 3.5%
             </span>
           </div>
         </div>

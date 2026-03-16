@@ -1,5 +1,9 @@
 import "./globals.css"
 import type { Metadata } from "next"
+import { Inter, Outfit } from "next/font/google"
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 
 export const metadata: Metadata = {
   title: "Flex Dashboard",
@@ -13,10 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="app-container">
-          {children}
-        </div>
+      <body className={`flex min-h-screen w-full bg-bg-dash text-text-primary ${inter.variable} ${outfit.variable} font-inter`}>
+        {children}
       </body>
     </html>
   )
